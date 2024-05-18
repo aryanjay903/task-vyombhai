@@ -1,8 +1,8 @@
 // todo: Skipping re-rendering when props are unchanged
-import React, { memo, useCallback, useState } from "react";
+import React, { useEffect, memo, useCallback, useMemo, useState } from "react";
 import { Button, CardTitle, Table } from "reactstrap";
+
 const Task = () => {
-	console.log("FirstExample");
 	const [count, setCount] = useState(0);
 	const [countt, setCountt] = useState(1);
 
@@ -12,7 +12,7 @@ const Task = () => {
 	// const increment = useCallback(() => setCount((preCount) => preCount + 1), []);
 	const increment2 = useCallback(
 		() => setCountt((preCount) => preCount + 1),
-		[count]
+		[countt]
 	);
 
 	// const handleCountt = useCallback(

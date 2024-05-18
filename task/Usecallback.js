@@ -8,11 +8,11 @@ import {
 const Usecallback = () => {
 	return (
 		<div>
-			<FirstExample />
-			<SecondExample />
-			<ThirdExample />
-			<FourthExample />
-			<FifthExample />
+			{/* <FirstExample /> */}
+			{/* <SecondExample /> */}
+			{/* <ThirdExample /> */}
+			{/* <FourthExample /> */}
+			{/* <FifthExample /> */}
 		</div>
 	);
 };
