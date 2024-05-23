@@ -5,6 +5,7 @@ import { Container } from "reactstrap";
 import Usememo from "@/task/Usememo";
 import Usecontext from "@/task/Usecontext";
 import Useeffect from "@/task/Useeffect";
+import Link from "next/link";
 const Home = () => {
 	return (
 		<Container className="mt-5">
@@ -12,7 +13,7 @@ const Home = () => {
 			{/* <Suspense /> */}
 			{/* <Usememo /> */}
 			{/* <Usecontext /> */}
-			<Useeffect />
+			<Link href="/UseEffect">useEffect</Link>
 		</Container>
 	);
 };
