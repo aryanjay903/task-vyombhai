@@ -1,3 +1,4 @@
+import useProduct from "@/hook/useProduct";
 import { useEffect, useState } from "react";
 import { Button, FormGroup, Input, Label } from "reactstrap";
 
@@ -6,13 +7,16 @@ import { Button, FormGroup, Input, Label } from "reactstrap";
 const FirstExample = (props) => {
 	const [count, setCount] = useState(0);
 	const [query, setQuery] = useState();
-	const [data, setData] = useState([]);
+	// const [data, setData] = useState([]);
+	const data = useProduct(1, "https://fakestoreapi.com/products");
+	// console.log(data);
 	//? when you parse as a props from parent component it will render when change state
 	useEffect(() => {
 		console.log("first useEffect");
 		return () => {
 			console.log("first cleanup useEffect");
 		};
+		//? and after every rendering ONLY IF `prop` or `state` changes
 	}, [props.cont]);
 
 	//? when state is changed it will render when change state
@@ -23,20 +27,20 @@ const FirstExample = (props) => {
 		};
 	}, [count, query]);
 
-	useEffect(() => {
-		fetch("https://dummyjson.com/products")
-			.then((res) => res.json())
-			.then((json) => {
-				setData(json.products);
-				console.log("third fetch");
-			});
-		return () => {
-			//? first run cleanup code when page is reload || when component is unmounted it will run
-			console.log("third cleanup");
-		};
-		//! when you not type ,[] it will render everytime
-		//? if you not use enter dependencies it will run only one time when page is load
-	}, []);
+	// useEffect(() => {
+	// 	fetch("https://dummyjson.com/products")
+	// 		.then((res) => res.json())
+	// 		.then((json) => {
+	// 			setData(json.products);
+	// 			console.log("third fetch");
+	// 		});
+	// 	return () => {
+	// 		//? first run cleanup code when page is reload || when component is unmounted it will run
+	// 		console.log("third cleanup");
+	// 	};
+	// 	//! when you not type ,[] it will render everytime
+	// 	//? if you not use enter dependencies it will run only one time when page is load
+	// }, []);
 
 	const handleCount = () => setCount((count) => count + 1);
 	// function handleCount() {
