@@ -1,35 +1,33 @@
-import React from "react";
-import Usecallback from "@/task/Usecallback";
 import Suspense from "@/task/Suspense";
 import { Container } from "reactstrap";
-import Usecontext from "@/task/Usecontext";
-import Useeffect from "@/task/Useeffect";
 import Link from "next/link";
 const Home = () => {
 	return (
 		<Container>
 			<div className="mt-5 d-flex flex-column gap-3">
-				{/* <Usecallback /> */}
 				{/* <Suspense /> */}
 				{/* <Usememo /> */}
 				{/* <Usecontext /> */}
-				<Link href="/UseEffect" className="btn btn-primary">
-					useEffect
+				<Link href="/useCallback" className="btn btn-primary">
+					useCallback
 				</Link>
-				<Link href="/Usememo" className="btn btn-primary">
+				<Link href="/useMemo" className="btn btn-primary">
 					useMemo
 				</Link>
-				<Link href="/Usecontext" className="btn btn-primary">
-					useContext
-				</Link>
-				<Link href="/UseState" className="btn btn-primary">
+				<Link href="/useState" className="btn btn-primary">
 					useState
 				</Link>
-				<Link href="/UseRef" className="btn btn-primary">
+				<Link href="/useRef" className="btn btn-primary">
 					useRef
 				</Link>
-				<Link href="/UseReducer" className="btn btn-primary">
+				<Link href="/useEffect" className="btn btn-primary">
+					useEffect
+				</Link>
+				<Link href="/useReducer" className="btn btn-primary">
 					useReducer
+				</Link>
+				<Link href="/useContext" className="btn btn-primary">
+					useContext
 				</Link>
 			</div>
 		</Container>

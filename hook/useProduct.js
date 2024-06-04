@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 
-const useProduct = (id, url) => {
+const useProduct = (url) => {
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
-		if (id) {
-			fetch(url)
-				.then((res) => res.json())
-				.then((json) => setProducts(json));
-		}
-	}, [id]);
+		fetch(url)
+			.then((res) => res.json())
+			.then((json) => setProducts(json));
+	}, []);
 
 	return products;
 };

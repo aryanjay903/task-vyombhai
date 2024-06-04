@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Input } from "reactstrap";
 const InputComponent = ({ textField, onChange }) => {
-	console.log("InputComponent");
+	console.log("memo input");
 	return (
 		<div>
 			<Input
