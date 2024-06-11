@@ -193,6 +193,7 @@ const UnderTask = ({ value, onIncrement }) => {
 		</>
 	);
 };
+
 const UnderTaskMemo = memo(({ value, onIncrement }) => {
 	console.log("memo child");
 	return (

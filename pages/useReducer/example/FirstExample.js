@@ -23,14 +23,19 @@ const FirstExample = () => {
 	};
 
 	return (
-		<div className="d-flex gap-3 container my-3">
-			<Button color="warning" onClick={() => dispatch(actionForIncrement)}>
-				Increment
-			</Button>
-			<h3>{state}</h3>
-			<Button color="warning" onClick={() => dispatch(actionForDecrement)}>
-				Decrement
-			</Button>
+		<div className="d-flex flex-column gap-3 container my-3">
+			<div>
+				<h3>Simple Count Example</h3>
+			</div>
+			<div className="d-flex gap-3">
+				<Button color="warning" onClick={() => dispatch(actionForIncrement)}>
+					Increment
+				</Button>
+				<h3>{state}</h3>
+				<Button color="warning" onClick={() => dispatch(actionForDecrement)}>
+					Decrement
+				</Button>
+			</div>
 		</div>
 	);
 };
