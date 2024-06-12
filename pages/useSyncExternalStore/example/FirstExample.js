@@ -1,26 +1,24 @@
-import { useSyncExternalStore, useState, useRef } from "react";
+import { useSyncExternalStore } from "react";
 import { Button, Container } from "reactstrap";
+import countStore from "@/utils/countStore";
 
 const FirstExample = () => {
-	const [count, setCount] = useState(0);
-	const getsnapshot = () => {
-		return count;
-	};
-	function getServerSnapshot() {
-		return true; // Always show "Online" for server-generated HTML
-	}
-	const subscribe = () => {
-		inputRef.current.addEventListener("onclick", () => {
-			setCount(count + 1);
-		});
-	};
-
-	const value = useSyncExternalStore(subscribe, getsnapshot, getServerSnapshot);
+	const value = useSyncExternalStore(
+		countStore.subscribe,
+		countStore.getSnapShot,
+		countStore.getServerSnapshot
+	);
 	return (
 		<Container className="mt-3">
-			<Button color="primary" ref={inputRef}>
-				increment {value}
-			</Button>
+			<div className="d-flex gap-3">
+				<Button color="warning" onClick={() => countStore.increment()}>
+					increment
+				</Button>
+				<h4>{value}</h4>
+				<Button color="warning" onClick={() => countStore.decrement()}>
+					decrement
+				</Button>
+			</div>
 		</Container>
 	);
 };
