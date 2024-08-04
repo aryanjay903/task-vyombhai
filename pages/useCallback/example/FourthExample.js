@@ -76,7 +76,7 @@ const WithUsingUseCallbackWithoutMemo = () => {
 	const addTodo = useCallback(() => {
 		console.log("addTodo-->2");
 		setTodo((preTodo) => [...preTodo, `new todo ${count}`]);
-	}, [todo]);
+	}, [count]);
 	return (
 		<div className="container my-3">
 			<CardTitle tag="h5">With Using useCallback() & Without memo() </CardTitle>
@@ -163,7 +163,7 @@ const WithUsingUseCallbackWithMemo = () => {
 	const addTodo = useCallback(() => {
 		console.log("addTodo-->2");
 		setTodo((preTodo) => [...preTodo, `new todo ${count}`]);
-	}, [todo]);
+	}, [count]);
 	return (
 		<div className="container my-3">
 			<CardTitle tag="h5">With Using useCallback() & With memo() </CardTitle>
@@ -225,5 +225,5 @@ const TodoListMemo = memo(({ todo, onClick }) => {
 		</>
 	);
 });
-
+TodoListMemo.displayName = "TodoListMemo";
 export default TilteComponent;

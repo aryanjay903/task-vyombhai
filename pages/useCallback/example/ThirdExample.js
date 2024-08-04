@@ -47,5 +47,5 @@ const UnderTask = memo(({ onIncrement }) => {
 		</Button>
 	);
 });
-
+UnderTask.displayName = "UnderTask";
 export default Task;

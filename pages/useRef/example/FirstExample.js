@@ -5,6 +5,7 @@ const MyInputForwardRef = forwardRef((props, ref) => {
 	return <input {...props} ref={ref} />;
 });
 
+MyInputForwardRef.displayName = "MyInputForwardRef";
 const MyInput = (props) => {
 	return <input {...props} />;
 };

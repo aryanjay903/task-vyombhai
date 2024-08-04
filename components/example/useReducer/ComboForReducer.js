@@ -2,7 +2,7 @@ import { Button, Input } from "reactstrap";
 import { TodoList } from "./Provider";
 import { useContext, useState } from "react";
 const ComboForReducer = () => {
-	const [text, setText] = useState();
+	const [text, setText] = useState("");
 	const { todoList, addTodo, removeTodo } = useContext(TodoList);
 	return (
 		<div className="container my-3">
@@ -11,9 +11,11 @@ const ComboForReducer = () => {
 				value={text}
 				onChange={(e) => setText(e.target.value)}
 			/>
-			{todoList.map((todo) => (
-				<li key={todo}>{todo}</li>
+			<ul>
+			{todoList.map((todo,idx) => (
+				<li key={idx}>{todo}</li>
 			))}
+			</ul>
 			<div>
 				<Button
 					color="primary"

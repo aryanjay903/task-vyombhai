@@ -43,6 +43,7 @@ const MemorizedExpensiveComponent = memo(({ number }) => {
 		</div>
 	);
 });
+MemorizedExpensiveComponent.displayName = "MemorizedExpensiveComponent"
 
 // const HookShow = () => {
 // 	//! if i use memo() on data then it will render when id is changed

@@ -59,6 +59,7 @@ const SlowQuery = memo(({ text }) => {
 	return <ul className="items">{items}</ul>;
 });
 
+SlowQuery.displayName = "SlowQuery";
 const SlowItem = ({ text }) => {
 	let startTime = performance.now();
 	while (performance.now() - startTime < 1) {

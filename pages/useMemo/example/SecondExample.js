@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 const SecondExample = () => {
 	const MyComponent = useMemo(() => {
@@ -6,10 +6,10 @@ const SecondExample = () => {
 		// const [input, setInput] = useState("");
 		// return <input value={input} onChange={(e) => setInput(e.target.text)} />;
 		return <div></div>;
-	});
+	},[]);
 
 	// return <div></div>;
-	return <MyComponent />;
+	return MyComponent;
 };
 
 export default SecondExample;

@@ -2,20 +2,25 @@ import { useRef, useImperativeHandle, forwardRef } from "react";
 
 const MyInputImperative = forwardRef((props, ref) => {
 	const inputRef = useRef();
-	useImperativeHandle(ref, () => ({
-		hello: () => {
-			inputRef.current.value = "hello";
-		},
-		focus: () => {
-			inputRef.current.focus();
-		},
-	}));
+	useImperativeHandle(
+		ref,
+		() => ({
+			hello: () => {
+				inputRef.current.value = "hello";
+			},
+			focus: () => {
+				inputRef.current.focus();
+			},
+		}),
+		[]
+	);
 	return <input {...props} ref={inputRef} />;
 });
-
+MyInputImperative.displayName = "MyInputImperative";
 const MyInput = forwardRef((props, ref) => {
 	return <input {...props} ref={ref} />;
 });
+MyInput.displayName = "MyInput";
 
 const FirstExample = () => {
 	return (

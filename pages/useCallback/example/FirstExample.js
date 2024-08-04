@@ -209,5 +209,6 @@ const UnderTaskMemo = memo(({ value, onIncrement }) => {
 		</>
 	);
 });
+UnderTaskMemo.displayName = "UnderTaskMemo";
 
 export default Task;

@@ -4,8 +4,8 @@ import { Button } from "reactstrap";
 const ThirdExample = () => {
 	let [timer, setTimer] = useState(0);
 	// let timer = 0;
-	let variable = 0;
 	useEffect(() => {
+		let variable = 0;
 		variable = setInterval(() => {
 			setTimer((timer) => timer + 1);
 		}, 1000);

@@ -19,6 +19,19 @@ const FifthExample = () => {
 	);
 };
 
+const ButtonComponent = memo(({ onClick }) => {
+	console.log("ButtonComponent");
+	return (
+		<div>
+			<Button color="primary" onClick={onClick}>
+				Button
+			</Button>
+		</div>
+	);
+});
+
+ButtonComponent.displayName = "ButtonComponent";
+
 const InnerComponent = ({ onChange }) => {
 	console.log("InnerComponent");
 	const theme = useContext(FifthExampleContext);
@@ -43,16 +56,5 @@ const InnerComponent = ({ onChange }) => {
 		</div>
 	);
 };
-
-const ButtonComponent = memo(({ onClick }) => {
-	console.log("ButtonComponent");
-	return (
-		<div>
-			<Button color="primary" onClick={onClick}>
-				Button
-			</Button>
-		</div>
-	);
-});
 
 export default FifthExample;
